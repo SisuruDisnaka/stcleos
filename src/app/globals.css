@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-navy: #0B2239;
+  --dark-navy: #050E1A;
+  --accent-cyan: #22D3EE;
+  --accent-gold: #7F1D2D;
+  --bg-pearl: #F1F5F9;
+  --bg-white: #FFFFFF;
+}
+
+html {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Custom Watermark patterns for cards */
+.bg-doodle-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-doodle-pattern-dark {
+  background-image: radial-gradient(rgba(0, 51, 153, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+  background: rgba(6, 24, 56, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth transitions */
+.transition-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22D3EE;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================
+   ST. THOMAS' PREMIUM CYAN — DARK GLASS SYSTEM
+   Reusable utilities for dark-navy sections: hero, footer, cards
+   ============================================================ */
+
+/* Premium dark glassmorphism card — mostly-opaque navy so it stays legible
+   over both dark sections AND white page backgrounds (e.g. nav dropdowns) */
+.glass-card-dark {
+  background: rgba(7, 26, 43, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-dark:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 20px 45px -10px rgba(34, 211, 238, 0.18), 0 0 0 1px rgba(34, 211, 238, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Thin maroon heritage accent line — decorative only, never a background fill */
+.maroon-accent-line {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22D3EE 0%, #ffffff 55%, #7F1D2D 100%);
+}
+
+.maroon-accent-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #7F1D2D;
+  box-shadow: 0 0 8px rgba(127, 29, 45, 0.5);
+}
+
+/* Secondary glass button — transparent, cyan-bordered */
+.btn-glass-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  color: #E0F7FF;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-glass-secondary:hover {
+  border-color: rgba(103, 232, 249, 0.85);
+  background: rgba(34, 211, 238, 0.10);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(34, 211, 238, 0.35);
+}
+
+/* Ambient radial glows for dark sections (Hero, Footer, CTA banner) */
+.glow-cyan-ambient {
+  background: radial-gradient(closest-side, rgba(34, 211, 238, 0.32), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.glow-maroon-ambient {
+  background: radial-gradient(closest-side, rgba(127, 29, 45, 0.22), transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+

@@ -46,9 +46,11 @@ import {
   Check,
   Building2,
 } from "lucide-react";
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { StcLeoOfficialLogo } from "@/components/ui/BrandingLogos";
 import {
   isFirebaseConfigured,
+  auth,
   getFirestoreCollection,
   getFirestoreDoc,
   saveFirestoreDoc,
@@ -314,18 +316,24 @@ export default function AdminPage() {
   const [driveUrlEdits, setDriveUrlEdits] = useState<Record<string, string>>({});
   const [driveUrlDocEdits, setDriveUrlDocEdits] = useState<Record<string, string>>({});
 
-  // Check saved session & fetch Firestore data
+  // Listen to real Firebase Authentication state
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stored = sessionStorage.getItem("stc_leo_admin_auth");
-      if (stored === "true") {
-        setIsAuthenticated(true);
-      }
-      setIsCheckingAuth(false);
+    // Public content can load right away
+    loadAllCloudData();
 
-      // Fetch live cloud data
-      loadAllCloudData();
+    if (!auth) {
+      setIsCheckingAuth(false);
+      return;
     }
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsAuthenticated(!!user);
+      setIsCheckingAuth(false);
+      // Reload so admin-only collections (applicants, inquiries) are fetched with credentials
+      if (user) loadAllCloudData();
+    });
+    return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadAllCloudData = () => {
@@ -414,34 +422,39 @@ export default function AdminPage() {
     }
   };
 
-  // Handle Login Authentication
-  const handleLogin = (e: React.FormEvent) => {
+  // Handle Login (Firebase Authentication)
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError(null);
+
+    if (!auth) {
+      setLoginError("Firebase is not configured. Check your NEXT_PUBLIC_FIREBASE_* environment variables.");
+      return;
+    }
+
     setIsLoggingIn(true);
-
-    setTimeout(() => {
-      const validEmails = ["admin@stcleos.org", "admin", "president.stcleos@gmail.com"];
-      const validPasswords = ["stcleos2024", "admin123", "leo306d8", "admin"];
-
-      const inputUser = loginEmail.trim().toLowerCase();
-      const inputPass = loginPassword.trim();
-
-      if (validEmails.includes(inputUser) && validPasswords.includes(inputPass)) {
-        setIsAuthenticated(true);
-        sessionStorage.setItem("stc_leo_admin_auth", "true");
-        showToast("Welcome back, Officer Admin!");
+    try {
+      await signInWithEmailAndPassword(auth, loginEmail.trim(), loginPassword);
+      setLoginPassword("");
+      showToast("Signed in successfully.");
+    } catch (err: any) {
+      const code = err?.code || "";
+      if (code === "auth/too-many-requests") {
+        setLoginError("Too many failed attempts. Please wait a few minutes and try again.");
+      } else if (code === "auth/network-request-failed") {
+        setLoginError("Network error. Check your connection and try again.");
       } else {
-        setLoginError("Invalid credentials. Demo login: admin@stcleos.org / stcleos2024");
+        // Same message for wrong email / wrong password so accounts can't be probed
+        setLoginError("Invalid email or password.");
       }
+    } finally {
       setIsLoggingIn(false);
-    }, 400);
+    }
   };
 
   // Handle Logout
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    sessionStorage.removeItem("stc_leo_admin_auth");
+  const handleLogout = async () => {
+    if (auth) await signOut(auth);
     setLoginEmail("");
     setLoginPassword("");
     showToast("Logged out of Admin Portal.");
@@ -938,14 +951,15 @@ export default function AdminPage() {
 
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Admin Username / Email
+                Admin Email
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
-                  type="text"
+                  type="email"
                   required
-                  placeholder="admin@stcleos.org"
+                  autoComplete="username"
+                  placeholder="Admin email address"
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0B2239] focus:bg-white text-slate-900 font-medium transition-all"
@@ -958,13 +972,13 @@ export default function AdminPage() {
                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                   Password Key
                 </label>
-                <span className="text-[10px] text-slate-400">Default: stcleos2024</span>
               </div>
               <div className="relative">
                 <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type={showPassword ? "text" : "password"}
                   required
+                  autoComplete="current-password"
                   placeholder="••••••••"
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}

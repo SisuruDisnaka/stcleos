@@ -1,4 +1,5 @@
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -40,19 +41,21 @@ export function isFirebaseConfigured(): boolean {
 // Safe singleton Firebase app initialization
 let app: FirebaseApp | undefined = undefined;
 let db: Firestore | undefined = undefined;
+let auth: Auth | undefined = undefined;
 
 if (typeof window !== "undefined" || isFirebaseConfigured()) {
   try {
     if (isFirebaseConfigured()) {
       app = getApps().length ? getApp() : initializeApp(firebaseConfig);
       db = getFirestore(app);
+      auth = getAuth(app);
     }
   } catch (error) {
     console.warn("Firebase initialization skipped or encountered error:", error);
   }
 }
 
-export { app, db };
+export { app, db, auth };
 
 // ==============================================================================
 // INITIAL SEED DATASETS FOR LEO CLUB OF ST. THOMAS' COLLEGE (PURE TYPESCRIPT CONSTANTS)
@@ -201,7 +204,7 @@ export const INITIAL_LEADERSHIP = {
       institution: "St. Thomas' College, Matara",
       scope:
         "Provides day-to-day guidance to the club's executive board and oversees adherence to the school's standards in all club activities.",
-      email: "",
+      email: "indjayasekara@gmail.com",
       initials: "IC",
       image: "/advisor/indika.jpeg",
     },
@@ -215,7 +218,7 @@ export const INITIAL_LEADERSHIP = {
       institution: "St. Thomas' College, Matara",
       scope:
         "Supports the club's programs and mentors student leaders in planning and delivering community service initiatives.",
-      email: "",
+      email: "sahindi97alles@gmail.com ",
       initials: "SA",
       image: "/advisor/sahindi.jpeg",
     },
@@ -229,7 +232,7 @@ export const INITIAL_LEADERSHIP = {
       institution: "Lions Club of Ruhunu Millennium • Leo District 306 D8",
       scope:
         "Ensures adherence to the Lions Clubs International Constitution, mentors club officers on youth leadership stewardship, and coordinates district engagement.",
-      email: "",
+      email: "rashmipurasinghe@yahoo.com",
       initials: "RP",
       image: "/advisor/rashmi.jpeg",
     },

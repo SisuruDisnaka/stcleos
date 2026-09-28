@@ -203,7 +203,7 @@ export const INITIAL_LEADERSHIP = {
         "Provides day-to-day guidance to the club's executive board and oversees adherence to the school's standards in all club activities.",
       email: "",
       initials: "IC",
-      image: "",
+      image: "/advisor/indika.jpeg",
     },
     {
       id: "adv-2",
@@ -217,7 +217,7 @@ export const INITIAL_LEADERSHIP = {
         "Supports the club's programs and mentors student leaders in planning and delivering community service initiatives.",
       email: "",
       initials: "SA",
-      image: "",
+      image: "/advisor/sahindi.jpeg",
     },
     {
       id: "adv-3",
@@ -231,7 +231,7 @@ export const INITIAL_LEADERSHIP = {
         "Ensures adherence to the Lions Clubs International Constitution, mentors club officers on youth leadership stewardship, and coordinates district engagement.",
       email: "",
       initials: "RP",
-      image: "",
+      image: "/advisor/rashmi.jpeg",
     },
   ],
   president: {
@@ -662,7 +662,7 @@ export const INITIAL_CLUB_PROFILE = {
     district: "/logos/stc-crest.png",
   },
   contact: {
-    email: "leoclub@stcmatara.lk",
+    email: "thomian.leos@gmail.com",
     phone: "",
     address: "St. Thomas' College, Matara, Sri Lanka",
     meetingSchedule: "Regular Club Meetings — schedule to be confirmed",

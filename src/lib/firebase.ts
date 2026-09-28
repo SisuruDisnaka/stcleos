@@ -247,7 +247,7 @@ export const INITIAL_LEADERSHIP = {
     email: "",
     motto: "“Leadership, Experience, Opportunity — leading with purpose for St. Thomas' College and Matara.”",
     initials: "SB",
-    image: "",
+    image: "/exco/sanija.jpg",
   },
   ipp: null as any,
   excoOfficers: [
@@ -262,7 +262,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "RM",
       color: "cyan",
-      image: "",
+      image: "/exco/ravindu.jpeg",
     },
     {
       id: "exco-vp2",
@@ -274,7 +274,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "HH",
       color: "blue",
-      image: "",
+      image: "/exco/haseen.jpg",
     },
     {
       id: "exco-vp3",
@@ -286,7 +286,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "DH",
       color: "blue",
-      image: "",
+      image: "/exco/dovindu.jpg",
     },
     {
       id: "exco-sec",
@@ -299,7 +299,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "HM",
       color: "blue",
-      image: "",
+      image: "/exco/haamid.jpg",
     },
     {
       id: "exco-tre",
@@ -312,7 +312,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "EM",
       color: "emerald",
-      image: "",
+      image: "/exco/esandu.jpg",
     },
     {
       id: "exco-asst-tre",
@@ -324,7 +324,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "HM",
       color: "emerald",
-      image: "",
+      image: "/exco/hesandu.jpg",
     },
     {
       id: "exco-asst-sec",
@@ -336,7 +336,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "LY",
       color: "amber",
-      image: "",
+      image: "/exco/luthira.jpg",
     },
     {
       id: "exco-coord",
@@ -348,7 +348,7 @@ export const INITIAL_LEADERSHIP = {
       email: "",
       initials: "AS",
       color: "indigo",
-      image: "",
+      image: "/exco/ahas.jpg",
     },
   ],
   directors: [
@@ -361,7 +361,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Oversees administrative operations, internal coordination, and board governance support.",
       email: "",
       initials: "VB",
-      image: "",
+      image: "/director/viduna.jpg",
     },
     {
       id: "dir-2",
@@ -372,7 +372,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Directs club publications, social media presence, and public relations.",
       email: "",
       initials: "MY",
-      image: "",
+      image: "/director/manul.jpg",
     },
     {
       id: "dir-3",
@@ -383,7 +383,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Leads fundraising strategy and financial sustainability initiatives for club projects.",
       email: "",
       initials: "EH",
-      image: "",
+      image: "/director/enuka.jpg",
     },
     {
       id: "dir-4",
@@ -394,7 +394,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Supports the fundraising directorate in planning and executing club initiatives.",
       email: "",
       initials: "HG",
-      image: "",
+      image: "/director/himesh.jpg",
     },
     {
       id: "dir-5",
@@ -405,7 +405,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Coordinates joint projects with the sponsoring Lions Club and partner organizations.",
       email: "",
       initials: "DB",
-      image: "",
+      image: "/director/dinada.jpg",
     },
     {
       id: "dir-6",
@@ -416,7 +416,7 @@ export const INITIAL_LEADERSHIP = {
       scope: "Supports the joint projects directorate in planning and delivery.",
       email: "",
       initials: "CR",
-      image: "",
+      image: "/director/chanithu.jpg",
     },
     {
       id: "dir-7",
@@ -428,7 +428,7 @@ export const INITIAL_LEADERSHIP = {
         "Leads community service and environmental initiatives, including Wagging Tails and Drug Prevention.",
       email: "",
       initials: "TT",
-      image: "",
+      image: "/director/thamindu.jpg",
     },
   ],
   assistantDirectors: [] as any[],

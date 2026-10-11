@@ -126,7 +126,7 @@ export const CLUBS_DATA: Record<string, ClubConfig> = {
     logos: {
       main: "/logos/stc-leo-badge.png",
       lion: "/logos/lions-international.png",
-      leo: "/logos/stc-leo-badge.png",
+      leo: "/logos/stc-leo.png",
       district: "/logos/stc-crest.png",
     },
     contact: {
@@ -222,7 +222,7 @@ export const CLUBS_DATA: Record<string, ClubConfig> = {
         title: "Wagging Tails",
         category: "Animal Welfare",
         categoryColor: "bg-rose-100 text-rose-800 border-rose-200",
-        image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
+        image: "/homes/8.jpeg",
         summary:
           "An ongoing animal welfare initiative caring for stray and community animals around Matara.",
         impactMetric: "Ongoing Initiative",
@@ -236,7 +236,7 @@ export const CLUBS_DATA: Record<string, ClubConfig> = {
         title: "Heena Arunalu",
         category: "Community Service",
         categoryColor: "bg-indigo-100 text-indigo-800 border-indigo-200",
-        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+        image: "/homes/1.jpeg",
         summary:
           "A community and social welfare project supporting underprivileged families and individuals in and around Matara.",
         impactMetric: "Ongoing Initiative",

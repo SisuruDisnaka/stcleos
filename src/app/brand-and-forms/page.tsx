@@ -18,9 +18,10 @@ import {
 } from "lucide-react";
 import {
   StcLeoOfficialLogo,
-  StcLeoEmblem,
+  StcCollegeCrest,
   LionsEmblemSvg,
   DistrictEmblemSvg,
+  
 } from "@/components/ui/BrandingLogos";
 import {
   isFirebaseConfigured,
@@ -96,30 +97,31 @@ export default function BrandAndFormsPage() {
   const brandAssets = [
     {
       id: "full-logo",
-      title: "Official Leo Club Badge (Full Lockup)",
+      title: "Official Leo Club Badge",
       type: "Circular badge — works on light or dark backgrounds",
       preview: <StcLeoOfficialLogo className="h-14 w-auto" theme="dark" />,
       fileUrl: "/logos/stc-leo-badge.png",
       format: "PNG (Transparent)",
       resolution: "1280 × 1280 px",
     },
-    {
-      id: "seal",
-      title: "Leo Club Circular Emblem",
-      type: "Lion Crest, ALPHA mark & club name",
-      preview: <StcLeoEmblem className="w-14 h-14" theme="dark" />,
-      fileUrl: "/logos/stc-leo-badge.png",
-      format: "PNG (Transparent)",
-      resolution: "1280 × 1280 px",
-    },
+    
     {
       id: "college-crest",
       title: "St. Thomas' College Crest",
       type: "\"Perseverando Vinces\" — School Heritage Crest",
+      preview: <StcCollegeCrest className="w-14 h-14" />,
+      fileUrl: "/logos/stc.png",
+      format: "PNG (Transparent)",
+      resolution: "307 × 324 px",
+    },
+    {
+      id: "district-logo",
+      title: "Leo District 306 D8 Official Emblem",
+      type: "District Administration Badge",
       preview: <DistrictEmblemSvg className="w-14 h-14" />,
       fileUrl: "/logos/stc-crest.png",
       format: "PNG (Transparent)",
-      resolution: "307 × 324 px",
+      resolution: "512 × 512 px",
     },
     {
       id: "lions-intl",

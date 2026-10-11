@@ -194,9 +194,11 @@ export default function HeroSection() {
                     </div>
                   </div>
 
-                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-[#0B2239] to-[#22D3EE] text-white flex items-center justify-center font-bold text-[10px] sm:text-xs shrink-0 shadow-xs border border-white/10">
-                    STC
-                  </div>
+                  <img
+                    src="/logos/stc-leo-badge.png"
+                    alt="Leo Club of St. Thomas' College"
+                    className="w-9 h-9 sm:w-12 sm:h-12 object-contain shrink-0 select-none drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]"
+                  />
                 </div>
 
                 {/* Carousel Indicator Dots */}

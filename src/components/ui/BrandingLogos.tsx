@@ -51,15 +51,32 @@ export function StcCollegeCrest({
 }) {
   return (
     <img
-      src="/logos/stc-crest.png"
+      src="/logos/stc.png"
       alt={alt}
       className={`${className} object-contain select-none shrink-0`}
     />
   );
 }
 
-// Aliases kept for backward compatibility within the codebase
-export const LeoEmblemSvg = StcLeoEmblem;
+
+export function LeoEmblemSvg({
+  className = "w-12 h-12",
+  theme = "dark",
+  alt = "Leo Club of St. Thomas' College Emblem",
+}: {
+  className?: string;
+  theme?: "dark" | "light";
+  alt?: string;
+}) {
+  void theme;
+  return (
+    <img
+      src="/logos/stc-leo.png"
+      alt={alt}
+      className={`${className} object-contain select-none shrink-0`}
+    />
+  );
+}
 
 // Official Lions Clubs International Emblem
 export function LionsEmblemSvg({
@@ -90,7 +107,13 @@ export function DistrictEmblemSvg({
   className?: string;
   alt?: string;
 }) {
-  return <StcCollegeCrest className={className} alt={alt} />;
+    return (
+    <img
+      src="/logos/stc-crest.png"
+      alt={alt}
+      className={`${className} object-contain select-none shrink-0 drop-shadow-sm`}
+    />
+  );
 }
 
 export const DistrictEmblem = DistrictEmblemSvg;

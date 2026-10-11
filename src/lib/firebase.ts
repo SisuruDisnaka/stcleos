@@ -566,7 +566,7 @@ export const INITIAL_IMPACT_STATS = {
 export const INITIAL_HERO_SLIDES = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85",
+    image: "/homes/5.jpeg",
     tag: "LEO CLUB OF ST. THOMAS' COLLEGE, MATARA",
     title: "Leadership, Experience, Opportunity",
     subtitle: "Fostering leadership, fellowship, and service since 2024",
@@ -580,14 +580,14 @@ export const INITIAL_HERO_SLIDES = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85",
+    image: "/homes/4.jpeg",
     tag: "HEENA ARUNALU",
     title: "Standing With Our Community",
     subtitle: "Supporting underprivileged families across Matara",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85",
+    image: "/homes/2.jpeg",
     tag: "DRUG PREVENTION",
     title: "Empowering a Healthier Youth",
     subtitle: "Awareness programs for schoolchildren and young people",

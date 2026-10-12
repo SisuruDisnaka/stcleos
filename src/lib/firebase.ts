@@ -255,6 +255,19 @@ export const INITIAL_LEADERSHIP = {
   ipp: null as any,
   excoOfficers: [
     {
+      id: "exco-pvp",
+      roleBadge: "TOP TABLE OFFICER",
+      designation: "Immediate Past Club President",
+      name: "Leo Rakitha Samaraweera",
+      faculty: "St. Thomas' College, Matara",
+      scope:
+        "Advises the current President, supports executive decision-making, and ensures leadership continuity.",
+      email: "rakithaavinash@gmail.com",
+      initials: "RV",
+      color: "cyan",
+      image: "/exco/rakitha.jpg",
+    },
+    {
       id: "exco-vp1",
       roleBadge: "TOP TABLE OFFICER",
       designation: "1st Vice President",
@@ -262,7 +275,7 @@ export const INITIAL_LEADERSHIP = {
       faculty: "St. Thomas' College, Matara",
       scope:
         "Directs project directorate coordination, supervises internal operational logistics, and represents the President in executive assemblies.",
-      email: "Ravindumudelige2008@gmail.com ",
+      email: "Ravindumudelige2008@gmail.com",
       initials: "RM",
       color: "cyan",
       image: "/exco/ravindu.jpeg",

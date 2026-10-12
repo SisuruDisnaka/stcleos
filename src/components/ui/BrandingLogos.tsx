@@ -102,7 +102,7 @@ export const LionsEmblem = LionsEmblemSvg;
 // club's own crest here rather than inventing or reusing an unrelated district emblem.
 export function DistrictEmblemSvg({
   className = "w-12 h-12",
-  alt = "St. Thomas' College Crest",
+  alt = "Leo District 306 D8 Emblem",
 }: {
   className?: string;
   alt?: string;
